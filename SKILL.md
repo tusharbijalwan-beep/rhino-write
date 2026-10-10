@@ -5,11 +5,14 @@ description: Writes documents (PRDs, wiki/research dossiers, competitive-synthes
 
 # Tushar's Document Style
 
-Reproduces how Tushar actually writes — not a generic PM template. Built from seven real
-documents he authored: three PRDs, one internal research wiki, one competitive-synthesis doc,
+Reproduces how Tushar actually writes — not a generic PM template. Built from eight real
+documents he authored: four PRDs, one internal research wiki, one competitive-synthesis doc,
 plus two Google Docs (a strategic thesis doc and an MVP status brief) pulled from links he shared
 in Slack DMs/group DMs. The full extracted profile (verbatim quoted patterns) is in
-`references/style-profile.md` — read it before drafting anything non-trivial.
+`references/style-profile.md` — read it before drafting anything non-trivial. Note: the fourth
+PRD (a parallel-entity research-page spec) had business-specific weights/thresholds/formulas
+stripped to generic placeholders before being added — only the structural/labeling patterns were
+kept, see the profile's intro note.
 
 ## How to use this
 
@@ -46,6 +49,8 @@ in Slack DMs/group DMs. The full extracted profile (verbatim quoted patterns) is
      Questions`.
    - Bold only the single load-bearing clause in a paragraph — never whole sentences.
    - No italics/underline; emoji only at title level if the doc type calls for it (wiki modules).
+   - When actually rendering a file (docx/Google Doc, not a chat reply): **IBM Plex Sans Light**,
+     **black** font color throughout — see style-profile §8.
 
 3. **Never fabricate evidence.** His style tags every number and quote with a source
    (`[internal_data]`, `Citation: [n]`, or a named attribution). If Tushar hasn't given you the

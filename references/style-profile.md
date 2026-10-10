@@ -3,8 +3,11 @@
 Source corpus: "AI in Trading" (competitive research synthesis), PRD — Expert Picks Blue-Chip
 Prioritization Phase 1, PRD — Direct Order Flow (Expert Picks), CoinDCX SEO Attribution PRD,
 Algo Trading Wiki, plus two Google Docs he authored and linked in Slack DMs/group DMs —
-"AlgoTrading at CoinDCX" (strategic thesis doc) and "Algo Trading — MVP Build" (status brief).
-Extracted verbatim where possible so the patterns stay concrete, not generic.
+"AlgoTrading at CoinDCX" (strategic thesis doc) and "Algo Trading — MVP Build" (status brief);
+plus a second logic/config-spec PRD for a research page spanning two related-but-distinct asset
+types. Extracted verbatim where possible so the patterns stay concrete, not generic — except the
+asset-page PRD, where the actual ranking weights/thresholds/formulas are business-specific and are
+generalized below rather than quoted.
 
 ## 1. Document skeletons (pick the one matching the doc's purpose — he does not use one fixed template)
 
@@ -14,6 +17,32 @@ Title → `1. Problem` (→ `Background` → `User Problem`) → `2. Hypothesis`
 `Examples` [worked scenarios as tables] → `Edge Case` [table] → `Acceptance Criteria` [flat
 bullets] → `Evaluation Criteria` [numbered, each with "Measured by" sub-bullets]) →
 `Future Evolution (Phase 2)` → `Long-term Vision`.
+
+**Logic/config-spec PRD — parallel-entity variant** (a research page spanning two related but
+distinct entity types, e.g. "Type A" vs "Type B"): `Why We Are Building X` → `Core Product Thesis`
+[a chain of progressively escalating questions that acts as the *whole doc's* backbone, not just a
+section opener — "What am I looking at? → What is happening to it? → How has it behaved? → What
+explains its value/performance? → What should I investigate next?"] → `The Research Experience We
+Need to Build` (→ the same question restated per entity type as `Type A → "quoted question"` /
+`Type B → "quoted question"`, surfacing how the same intent forks into different sub-questions) →
+`User Stories` (`N. User Problem` → needs bulleted separately per entity type) → `Product
+Principles` (each principle a short bold label, one line of justification) → `What X Owns` (a
+one-line ownership claim, then the minimum building blocks as an arrow chain per entity type) →
+`Structure` (the user's progression through the page as one arrow chain) → per-entity-type
+`Research Baseline` (arrow chain of modules, then each module restated as a question with one
+supporting line) → `Ranking Logic` (`Core Ranking Principles` as imperative rules — always
+including an explicit "missing data is excluded, never treated as zero" rule — then one subsection
+per module: `Ranking metric:` → `Formula:` [normalize every factor before combining; never combine
+a raw count with a percentage] → `Why weighted ranking?` [defends the chosen weighting by ruling
+out each single-factor alternative by name] → `Display:` row spec → a `Future Scope: X` subsection
+closing on a `V2 decision:` line that explicitly defers the unresolved specifics instead of
+guessing them) → `Derived Insights Rules Logic` (turns raw metrics into single templated
+sentences; any numeric threshold is stated once and immediately flagged "centrally configurable
+for future calibration" rather than hardcoded-and-forgotten; `Edge Cases` as bullets phrased
+`If <condition>, <fallback>`) → `Requirements` (`Functional` / `Non-Functional`, grouped under the
+same module names already used earlier in the doc) → `Analytics & Tracking` (the funnel described
+in two prose paragraphs, not a table, then a pointer to the full schema in an external sheet
+rather than inlining it: `Reference: <sheet name>`).
 
 **Narrative-funnel PRD** (e.g. Direct Order Flow):
 Title → `Executive Summary` → `Voice of the User` [verbatim Hinglish quotes, named attribution]
@@ -163,6 +192,17 @@ Reuse these verbatim as section labels/phrases when they fit the doc type:
   "Sub-account setup [exist already] —", "Access restriction guardrails — To be Identified by
   Engineering and still to be scoped", "[In talks with vendor]", "[First draft reviewed by Ravi
   in progress to finalize]" — a compact way of flagging owner/status without a separate column.
+- "Core Ranking Principles" (fixed label introducing the imperative rules that govern every
+  ranking/scoring module in a doc, stated once up front rather than repeated per module).
+- "Why weighted ranking?" (a "Why not X" variant specifically for defending a scoring formula —
+  rules out each single-factor alternative by name before landing on the chosen weighting).
+- "Future Scope: X" / closing "V2 decision:" line — explicitly defers unresolved specifics
+  ("final factors/weights to be validated before implementation") instead of guessing them.
+- A numeric threshold is always paired with an explicit "centrally configurable for future
+  calibration" (or equivalent) note — never hardcode-and-forget a tunable knob.
+- "X owns Y" as the fixed phrasing for a scope/ownership claim before a module breakdown.
+- Progressive-question chains used as a whole-document backbone, not just a section opener — the
+  same "rhetorical why/what framing" from §3, escalated across an entire doc's structure.
 
 ## 7. Tone markers
 
@@ -197,3 +237,7 @@ Reuse these verbatim as section labels/phrases when they fit the doc type:
 - Section breaks are heading-level changes, not horizontal rules or blank-line conventions.
 - `→` and `<>` used as informal connectors in headers/body in place of "vs." or "to"
   (`Competitor analysis<>Delta Exchange`).
+- **Typeface and color (rendered docs only — docx/Google Docs, not markdown/chat)**: body font is
+  **IBM Plex Sans, Light weight**; font color is **black** throughout — headings included, no
+  color-coding or secondary gray text. Apply this whenever actually rendering a file, not when
+  replying inline in chat.

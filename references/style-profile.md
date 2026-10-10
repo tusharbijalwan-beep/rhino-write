@@ -173,7 +173,7 @@ Reuse these verbatim as section labels/phrases when they fit the doc type:
 - "Why Now" (section header for diagnosis/urgency docs)
 - "Rationale:" (standalone label before justification bullets)
 - "Out of Scope" / "MVP Scope Boundaries" (always its own explicit section)
-- "internal_data" tagged inline next to a stat: "61.4% [internal_data]"
+- "internal_data" tagged inline next to a stat: "[X]% [internal_data]"
 - "Citation: [1,2]" — bracketed numeric citation markers
 - "debatable" appended inline to flag a contested requirement instead of deleting it
 - "Open Tasks and Questions" (collects TBDs at the end)
@@ -220,7 +220,7 @@ Reuse these verbatim as section labels/phrases when they fit the doc type:
 - **Self-critique / calibration**: explicitly checks whether outside research and internal data
   agree before trusting a thesis, e.g. "External Claims, Internal Confirmations — Stronger in Our
   Data Than in the Research."
-- Numbers are precise with honest uncertainty markers rather than false precision: "~24.8L
+- Numbers are precise with honest uncertainty markers rather than false precision: "~[N]L
   users", "+10–15%".
 - Closing "Standing Test" pattern — ends strategic sections with a short reusable decision
   checklist framed as questions.
